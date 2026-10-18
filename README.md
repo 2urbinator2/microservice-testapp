@@ -8,9 +8,7 @@
 
 Welcome to microservice-shop-testapp!
 
-This repository features a versatile, microservice-based architecture designed as a sandbox for testing, benchmarking, and experimental workflows.
-
-The application is currently in development and provides the core features of an e-commerce platform:
+This repository features a versatile, microservice-based architecture designed as a sandbox for testing, benchmarking, and experimental workflows. The application is currently in development and provides the core features of an e-commerce platform:
 
 - User Authentication: Account creation and login functionality
 - Shopping Cart: Adding products to the cart
