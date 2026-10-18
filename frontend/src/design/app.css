@@ -1,0 +1,7 @@
+:root {
+  --main-color: hsl(235, 95%, 68%);
+}
+
+.App-link {
+  color: var(--main-color);
+}

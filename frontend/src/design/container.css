@@ -1,0 +1,66 @@
+/* Container */
+
+/* Erzwingt unter 360px Breite das seitliche Scrollen */
+body {
+  min-width: 360px;
+}
+
+/* Dynamischer Seitenabstand (min. 1rem, max. 300px) inklusive Zentrierung */
+.custom-padding {
+  padding-left: clamp(1rem, 5vw, 300px);
+  padding-right: clamp(1rem, 5vw, 300px);
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Feste Seitenabstände für Tablets und kleine Desktops (768px - 1199px) */
+@media (min-width: 768px) and (max-width: 1199px) {
+  .custom-padding {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .custom-padding {
+    padding-left: clamp(2rem, 5%, 300px);
+    padding-right: clamp(2rem, 5%, 300px);
+    max-width: 1400px; /* optional: verhindert zu große Rows */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+
+
+/* Überschrift */
+.header-row {
+    display: flex;
+    align-items: center;
+    color: #001d2e;
+    margin-bottom: 1rem;
+}
+
+.header-spacer, .header-date {
+    flex: 1;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.header-date {
+    text-align: right;
+    color: #6c757d;
+}
+
+@media (max-width: 600px) {
+    .header-row {
+        flex-direction: column;
+        text-align: center;
+    }
+    .header-spacer { display: none; }
+}

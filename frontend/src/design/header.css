@@ -1,0 +1,166 @@
+
+/* 
+- Header der Seite
+*/
+
+/* Haupt-Header: Sorgt auf großen Desktop-Bildschirmen für breite Seitenabstände */
+.responsive-header {
+    padding-left: 300px;
+    padding-right: 300px;
+    width: 100%;
+ }
+  
+/* Laptops & Tablets (unter 1200px): Verringert den Seitenabstand und zentriert den Header */
+@media (max-width: 1200px) {
+  .responsive-header {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+}
+
+/* Smartphones (unter 768px): Behält den reduzierten Seitenabstand bei */
+@media (max-width: 768px) {
+  .responsive-header {
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center;
+  }
+}
+
+/* Haupt-Dropdown: Schwebendes Menü direkt unter dem Navigationspunkt */
+.dropdown-menu-hover {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+    background-color: white;
+    padding: 0.5rem 0;
+    min-width: 200px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    z-index: 1000;
+    list-style: none;
+}
+  
+/* Bezugspunkt: Erlaubt die genaue Positionierung des Dropdowns direkt unter diesem Menüeintrag */
+.dropdown-hover {
+  position: relative;
+}
+
+/* Öffnen: Blendet das Dropdown-Menü ein, sobald mit der Maus über den Menüeintrag gefahren wird */
+.dropdown-hover:hover .dropdown-menu-hover {
+  display: block;
+}
+  
+/* Stylt die einzelnen Links im Haupt-Dropdown (Schriftart, Abstände und sanfter Farbwechsel) */
+.dropdown-menu-hover .dropdown-item {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #001d2e;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Färbt den Link im Dropdown dunkelblau mit weißer Schrift, wenn man mit der Maus darüberfährt */
+.dropdown-menu-hover .dropdown-item:hover {
+  background-color: #001d2e;
+  color: #ffffff;
+}
+  
+/* Bezugspunkt für das 2. Untermenü (z. B. "Marathon") */
+.dropdown-submenu {
+  position: relative;
+
+}
+.dropdown-submenu-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;   
+  background-color: white;
+  padding: 0.5rem 0;
+  min-width: 200px;
+  border: 1px solid #eaeaea;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  border-radius: 0.5rem;
+  z-index: 1001;
+  list-style: none;
+  margin: 0;
+}
+  
+/* Styling & Hover-Effekt für die Links im 2. Untermenü */
+.dropdown-submenu-menu .dropdown-item {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #001d2e;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: block;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Farbwechsel beim Drüberfahren für die Links im 2. Untermenü */
+.dropdown-submenu-menu .dropdown-item:hover {
+  background-color: #001d2e;
+  color: #ffffff;
+}
+
+/* Blendet das 2. Untermenü ein, wenn man über den Unterpunkt (z. B. "Marathon") fährt */
+.desktop-only-dropdown:hover .dropdown-submenu-menu {
+  display: block;
+}
+
+/* Ermöglicht sanftes, flüssiges Scrollen zu Ankern (z. B. bei Klick auf Links mit #) statt eines abrupten Sprungs */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Standard-Dreieck von HTML-Details entfernen */
+.mobile-only-dropdown summary::-webkit-details-marker,
+.mobile-only-dropdown summary::marker {
+  display: none;
+}
+
+/* Smartphone-Anpassung (unter 768px) */
+@media (max-width: 767px) {
+  /* Bezugspunkt für die absolute Positionierung setzen */
+  .mobile-only-dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Pfeil-Animation beim Klick */
+  .mobile-only-dropdown .arrow-icon {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-only-dropdown[open] .arrow-icon {
+    transform: rotate(180deg);
+  }
+
+  /* Standardmäßig versteckt */
+  .mobile-only-dropdown .dropdown-submenu-menu {
+    display: none;
+  }
+
+  /* Klappt schwebend nach unten auf, sobald geöffnet */
+  .mobile-only-dropdown[open] .dropdown-submenu-menu {
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    z-index: 1005;
+    background-color: #ffffff;
+    min-width: 200px;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    border: 1px solid #eaeaea;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+}
